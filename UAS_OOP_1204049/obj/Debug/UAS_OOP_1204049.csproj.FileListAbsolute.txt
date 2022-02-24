@@ -1,0 +1,16 @@
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\bin\Debug\UAS_OOP_1204049.exe.config
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\bin\Debug\UAS_OOP_1204049.exe
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\bin\Debug\UAS_OOP_1204049.pdb
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.csprojResolveAssemblyReference.cache
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.Daftar_Ulang_Mahasiswa.resources
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.Home.resources
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.Mahasiswa.resources
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.Input_Program_Studi.resources
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.Properties.Resources.resources
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.csproj.GenerateResource.Cache
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.exe
+c:\users\asus\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.pdb
+C:\Users\ASUS\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.viewMahasiswa.resources
+C:\Users\ASUS\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.viewProdi.resources
+C:\Users\ASUS\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.updateMahasiswa.resources
+C:\Users\ASUS\documents\visual studio 2015\Projects\UAS_OOP_1204049\UAS_OOP_1204049\obj\Debug\UAS_OOP_1204049.updateProdi.resources
