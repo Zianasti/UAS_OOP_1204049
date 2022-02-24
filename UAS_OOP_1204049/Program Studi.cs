@@ -56,7 +56,6 @@ namespace UAS_OOP_1204049
 
         private void clear()
         {
-            //mengosongkan isian dalam TextBox
             txtKodeProdi.Text = "";
             txtNamaProdi.Text = "";
             txtSingkatan.Text = "";
@@ -66,14 +65,11 @@ namespace UAS_OOP_1204049
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
-            // perintah SQL untuk menyimpan data inputan user ke basisdata
             string myCmd = "INSERT INTO ms_prodi VALUES ('"
                 + txtKodeProdi.Text + "','"
                 + txtNamaProdi.Text + "','"
                 + txtSingkatan.Text + "','"
                 + txtBikul.Text + "')";
-
-            //memanggil method UpdateDB dengan set parameter myCmd
             UpdateDB(myCmd);
 
             

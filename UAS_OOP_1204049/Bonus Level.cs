@@ -74,7 +74,7 @@ namespace UAS_OOP_1204049
 
         private void clear()
         {
-            //mengosongkan isian dalam TextBox
+           
             txtNpm.Text = "";
             txtNamaMhs.Text = "";
             cbProdi.Text = "";
