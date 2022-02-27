@@ -47,14 +47,15 @@
             this.TxtNamaMhs = new System.Windows.Forms.TextBox();
             this.txtProdi = new System.Windows.Forms.TextBox();
             this.txtBikul = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.txtPotBiaya = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.rbC = new System.Windows.Forms.RadioButton();
+            this.rbA = new System.Windows.Forms.RadioButton();
+            this.rbB = new System.Windows.Forms.RadioButton();
             this.gbGrade = new System.Windows.Forms.GroupBox();
+            this.btnCari = new System.Windows.Forms.Button();
             this.gbGrade.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,13 +200,15 @@
             // 
             this.txtNpm.Location = new System.Drawing.Point(163, 60);
             this.txtNpm.Name = "txtNpm";
-            this.txtNpm.Size = new System.Drawing.Size(187, 20);
+            this.txtNpm.Size = new System.Drawing.Size(147, 20);
             this.txtNpm.TabIndex = 15;
+            this.txtNpm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNpm_KeyPress);
             // 
             // TxtNamaMhs
             // 
             this.TxtNamaMhs.Location = new System.Drawing.Point(163, 96);
             this.TxtNamaMhs.Name = "TxtNamaMhs";
+            this.TxtNamaMhs.ReadOnly = true;
             this.TxtNamaMhs.Size = new System.Drawing.Size(187, 20);
             this.TxtNamaMhs.TabIndex = 16;
             // 
@@ -213,6 +216,7 @@
             // 
             this.txtProdi.Location = new System.Drawing.Point(163, 135);
             this.txtProdi.Name = "txtProdi";
+            this.txtProdi.ReadOnly = true;
             this.txtProdi.Size = new System.Drawing.Size(187, 20);
             this.txtProdi.TabIndex = 17;
             // 
@@ -220,46 +224,15 @@
             // 
             this.txtBikul.Location = new System.Drawing.Point(163, 170);
             this.txtBikul.Name = "txtBikul";
+            this.txtBikul.ReadOnly = true;
             this.txtBikul.Size = new System.Drawing.Size(187, 20);
             this.txtBikul.TabIndex = 18;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 14);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(32, 17);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "A";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 44);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(32, 17);
-            this.radioButton2.TabIndex = 20;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "B";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 76);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(32, 17);
-            this.radioButton3.TabIndex = 21;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "C";
-            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // txtPotBiaya
             // 
             this.txtPotBiaya.Location = new System.Drawing.Point(163, 312);
             this.txtPotBiaya.Name = "txtPotBiaya";
+            this.txtPotBiaya.ReadOnly = true;
             this.txtPotBiaya.Size = new System.Drawing.Size(187, 20);
             this.txtPotBiaya.TabIndex = 22;
             // 
@@ -269,6 +242,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(187, 20);
             this.txtTotal.TabIndex = 23;
+            this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress);
             // 
             // btnSubmit
             // 
@@ -278,7 +252,7 @@
             this.btnSubmit.TabIndex = 24;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.button1_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnClear
             // 
@@ -290,22 +264,69 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // rbC
+            // 
+            this.rbC.AutoSize = true;
+            this.rbC.Location = new System.Drawing.Point(6, 76);
+            this.rbC.Name = "rbC";
+            this.rbC.Size = new System.Drawing.Size(32, 17);
+            this.rbC.TabIndex = 21;
+            this.rbC.TabStop = true;
+            this.rbC.Text = "C";
+            this.rbC.UseVisualStyleBackColor = true;
+            this.rbC.CheckedChanged += new System.EventHandler(this.rbC_CheckedChanged);
+            // 
+            // rbA
+            // 
+            this.rbA.AutoSize = true;
+            this.rbA.Location = new System.Drawing.Point(6, 14);
+            this.rbA.Name = "rbA";
+            this.rbA.Size = new System.Drawing.Size(32, 17);
+            this.rbA.TabIndex = 19;
+            this.rbA.TabStop = true;
+            this.rbA.Text = "A";
+            this.rbA.UseVisualStyleBackColor = true;
+            this.rbA.CheckedChanged += new System.EventHandler(this.rbA_CheckedChanged);
+            // 
+            // rbB
+            // 
+            this.rbB.AutoSize = true;
+            this.rbB.Location = new System.Drawing.Point(6, 44);
+            this.rbB.Name = "rbB";
+            this.rbB.Size = new System.Drawing.Size(32, 17);
+            this.rbB.TabIndex = 20;
+            this.rbB.TabStop = true;
+            this.rbB.Text = "B";
+            this.rbB.UseVisualStyleBackColor = true;
+            this.rbB.CheckedChanged += new System.EventHandler(this.rbB_CheckedChanged);
+            // 
             // gbGrade
             // 
-            this.gbGrade.Controls.Add(this.radioButton2);
-            this.gbGrade.Controls.Add(this.radioButton1);
-            this.gbGrade.Controls.Add(this.radioButton3);
+            this.gbGrade.Controls.Add(this.rbB);
+            this.gbGrade.Controls.Add(this.rbA);
+            this.gbGrade.Controls.Add(this.rbC);
             this.gbGrade.Location = new System.Drawing.Point(165, 199);
             this.gbGrade.Name = "gbGrade";
             this.gbGrade.Size = new System.Drawing.Size(200, 100);
             this.gbGrade.TabIndex = 26;
             this.gbGrade.TabStop = false;
             // 
+            // btnCari
+            // 
+            this.btnCari.Location = new System.Drawing.Point(316, 60);
+            this.btnCari.Name = "btnCari";
+            this.btnCari.Size = new System.Drawing.Size(34, 23);
+            this.btnCari.TabIndex = 27;
+            this.btnCari.Text = "Cari";
+            this.btnCari.UseVisualStyleBackColor = true;
+            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
+            // 
             // Daftar_Ulang_Mahasiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 438);
+            this.Controls.Add(this.btnCari);
             this.Controls.Add(this.gbGrade);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
@@ -360,13 +381,14 @@
         private System.Windows.Forms.TextBox TxtNamaMhs;
         private System.Windows.Forms.TextBox txtProdi;
         private System.Windows.Forms.TextBox txtBikul;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.TextBox txtPotBiaya;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.RadioButton rbC;
+        private System.Windows.Forms.RadioButton rbA;
+        private System.Windows.Forms.RadioButton rbB;
         private System.Windows.Forms.GroupBox gbGrade;
+        private System.Windows.Forms.Button btnCari;
     }
 }

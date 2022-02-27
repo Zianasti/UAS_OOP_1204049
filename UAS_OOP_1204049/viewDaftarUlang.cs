@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace UAS_OOP_1204049
 {
-    public partial class viewProdi : Form
+    public partial class viewDaftarUlang : Form
     {
-        public viewProdi()
+        public viewDaftarUlang()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace UAS_OOP_1204049
         private SqlDataAdapter DataAdapter;
         private DataSet DataSet;
 
-        private void viewProdi_Load(object sender, EventArgs e)
+        private void viewDaftarUlang_Load(object sender, EventArgs e)
         {
             string constr = @"Data Source=ZIANASTI\ZIANASTI; Initial Catalog = UAS; Integrated Security = True";
             conn = new SqlConnection(constr);
@@ -30,13 +30,13 @@ namespace UAS_OOP_1204049
             cmd1 = new SqlCommand();
             cmd1.Connection = conn;
             cmd1.CommandType = CommandType.Text;
-            cmd1.CommandText = "select * from ms_prodi";
+            cmd1.CommandText = "select * from tr_daftar_ulang";
             DataSet = new DataSet();
             DataAdapter = new SqlDataAdapter(cmd1);
-            DataAdapter.Fill(DataSet, "ms_prodi");
-            dgProdi.DataSource = DataSet;
-            dgProdi.DataMember = "ms_prodi";
-            dgProdi.Refresh();
+            DataAdapter.Fill(DataSet, "tr_daftar_ulang");
+            dgDU.DataSource = DataSet;
+            dgDU.DataMember = "tr_daftar_ulang";
+            dgDU.Refresh();
             conn.Close();
         }
     }

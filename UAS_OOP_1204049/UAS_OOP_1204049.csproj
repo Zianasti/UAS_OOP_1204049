@@ -58,11 +58,11 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bonus Level.cs">
+    <Compile Include="Mahasiswa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bonus Level.Designer.cs">
-      <DependentUpon>Bonus Level.cs</DependentUpon>
+    <Compile Include="Mahasiswa.Designer.cs">
+      <DependentUpon>Mahasiswa.cs</DependentUpon>
     </Compile>
     <Compile Include="Program Studi.cs">
       <SubType>Form</SubType>
@@ -72,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="updateDaftarUlang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateDaftarUlang.Designer.cs">
+      <DependentUpon>updateDaftarUlang.cs</DependentUpon>
+    </Compile>
     <Compile Include="updateMahasiswa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,12 @@
     </Compile>
     <Compile Include="updateProdi.Designer.cs">
       <DependentUpon>updateProdi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewDaftarUlang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewDaftarUlang.Designer.cs">
+      <DependentUpon>viewDaftarUlang.cs</DependentUpon>
     </Compile>
     <Compile Include="viewMahasiswa.cs">
       <SubType>Form</SubType>
@@ -102,8 +114,8 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bonus Level.resx">
-      <DependentUpon>Bonus Level.cs</DependentUpon>
+    <EmbeddedResource Include="Mahasiswa.resx">
+      <DependentUpon>Mahasiswa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Program Studi.resx">
       <DependentUpon>Program Studi.cs</DependentUpon>
@@ -117,11 +129,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="updateDaftarUlang.resx">
+      <DependentUpon>updateDaftarUlang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="updateMahasiswa.resx">
       <DependentUpon>updateMahasiswa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="updateProdi.resx">
       <DependentUpon>updateProdi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewDaftarUlang.resx">
+      <DependentUpon>viewDaftarUlang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewMahasiswa.resx">
       <DependentUpon>viewMahasiswa.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace UAS_OOP_1204049
 {
-    partial class viewProdi
+    partial class viewDaftarUlang
     {
         /// <summary>
         /// Required designer variable.
@@ -29,39 +29,39 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dgProdi = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProdi)).BeginInit();
+            this.dgDU = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDU)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(211, 22);
+            this.label1.Location = new System.Drawing.Point(181, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 16);
+            this.label1.Size = new System.Drawing.Size(208, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Form View Data Program Studi";
+            this.label1.Text = "Form View Data Daftar Ulang";
             // 
-            // dgProdi
+            // dgDU
             // 
-            this.dgProdi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProdi.Location = new System.Drawing.Point(25, 67);
-            this.dgProdi.Name = "dgProdi";
-            this.dgProdi.Size = new System.Drawing.Size(576, 336);
-            this.dgProdi.TabIndex = 1;
+            this.dgDU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDU.Location = new System.Drawing.Point(24, 64);
+            this.dgDU.Name = "dgDU";
+            this.dgDU.Size = new System.Drawing.Size(551, 396);
+            this.dgDU.TabIndex = 1;
             // 
-            // viewProdi
+            // viewDaftarUlang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 476);
-            this.Controls.Add(this.dgProdi);
+            this.ClientSize = new System.Drawing.Size(598, 484);
+            this.Controls.Add(this.dgDU);
             this.Controls.Add(this.label1);
-            this.Name = "viewProdi";
-            this.Text = "View Program Studi";
-            this.Load += new System.EventHandler(this.viewProdi_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgProdi)).EndInit();
+            this.Name = "viewDaftarUlang";
+            this.Text = "View Daftar Ulang";
+            this.Load += new System.EventHandler(this.viewDaftarUlang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgDU)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -70,6 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgProdi;
+        private System.Windows.Forms.DataGridView dgDU;
     }
 }

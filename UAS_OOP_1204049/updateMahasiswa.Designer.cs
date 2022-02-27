@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgMhs = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgMhs)).BeginInit();
             this.SuspendLayout();
@@ -50,22 +49,12 @@
             this.dgMhs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgMhs.Location = new System.Drawing.Point(34, 65);
             this.dgMhs.Name = "dgMhs";
-            this.dgMhs.Size = new System.Drawing.Size(588, 312);
+            this.dgMhs.Size = new System.Drawing.Size(588, 351);
             this.dgMhs.TabIndex = 1;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(201, 418);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 2;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(349, 418);
+            this.btnUpdate.Location = new System.Drawing.Point(282, 439);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 3;
@@ -79,11 +68,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 474);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgMhs);
             this.Controls.Add(this.label1);
             this.Name = "updateMahasiswa";
             this.Text = "Update Mahasiswa";
+            this.Load += new System.EventHandler(this.updateMahasiswa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgMhs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -94,7 +83,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgMhs;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnUpdate;
     }
 }

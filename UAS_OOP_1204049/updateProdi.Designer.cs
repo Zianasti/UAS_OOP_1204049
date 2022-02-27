@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgProdi = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdi)).BeginInit();
             this.SuspendLayout();
@@ -53,19 +52,9 @@
             this.dgProdi.Size = new System.Drawing.Size(600, 330);
             this.dgProdi.TabIndex = 1;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(186, 415);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 2;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(382, 415);
+            this.btnUpdate.Location = new System.Drawing.Point(281, 414);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 3;
@@ -79,11 +68,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 464);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgProdi);
             this.Controls.Add(this.label1);
             this.Name = "updateProdi";
             this.Text = "Update Program Studi";
+            this.Load += new System.EventHandler(this.updateProdi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgProdi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -94,7 +83,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgProdi;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnUpdate;
     }
 }

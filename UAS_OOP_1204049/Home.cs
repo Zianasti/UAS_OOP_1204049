@@ -65,5 +65,19 @@ namespace UAS_OOP_1204049
             EditProdi.MdiParent = this;
             EditProdi.Show();
         }
+
+        private void daftarUlangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            viewDaftarUlang LihatDaftarUlang = new viewDaftarUlang();
+            LihatDaftarUlang.MdiParent = this;
+            LihatDaftarUlang.Show();
+        }
+
+        private void daftarUlangToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            updateDaftarUlang EditDaftarUlang = new updateDaftarUlang();
+            EditDaftarUlang.MdiParent = this;
+            EditDaftarUlang.Show();
+        }
     }
 }

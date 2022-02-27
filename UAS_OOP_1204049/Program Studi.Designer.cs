@@ -139,7 +139,6 @@
             this.txtKodeProdi.Name = "txtKodeProdi";
             this.txtKodeProdi.Size = new System.Drawing.Size(204, 20);
             this.txtKodeProdi.TabIndex = 9;
-            this.txtKodeProdi.Leave += new System.EventHandler(this.txtKodeProdi_Leave);
             // 
             // txtNamaProdi
             // 
@@ -147,7 +146,7 @@
             this.txtNamaProdi.Name = "txtNamaProdi";
             this.txtNamaProdi.Size = new System.Drawing.Size(204, 20);
             this.txtNamaProdi.TabIndex = 10;
-            this.txtNamaProdi.Leave += new System.EventHandler(this.txtNamaProdi_Leave);
+            this.txtNamaProdi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamaProdi_KeyPress);
             // 
             // txtSingkatan
             // 
@@ -155,7 +154,7 @@
             this.txtSingkatan.Name = "txtSingkatan";
             this.txtSingkatan.Size = new System.Drawing.Size(204, 20);
             this.txtSingkatan.TabIndex = 11;
-            this.txtSingkatan.Leave += new System.EventHandler(this.txtSingkatan_Leave);
+            this.txtSingkatan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSingkatan_KeyPress);
             // 
             // btnSubmit
             // 

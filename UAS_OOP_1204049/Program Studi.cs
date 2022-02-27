@@ -18,32 +18,23 @@ namespace UAS_OOP_1204049
             InitializeComponent();
         }
 
-
-        
         private void UpdateDB(string cmd)
         {
             
             try
             {
-                
                 SqlConnection myConnection = new SqlConnection(@"Data Source=ZIANASTI\ZIANASTI; Initial Catalog = UAS; Integrated Security = True");
 
-               
                 myConnection.Open();
 
-                
                 SqlCommand myCommand = new SqlCommand();
 
-                
                 myCommand.Connection = myConnection;
 
-               
                 myCommand.CommandText = cmd;
 
-                
                 myCommand.ExecuteNonQuery();
 
-                
                 MessageBox.Show("Data Berhasil Disubmit !", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
@@ -51,6 +42,47 @@ namespace UAS_OOP_1204049
             {
                 
                 MessageBox.Show(ex.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        
+
+        private void btnSubmit_Click_1(object sender, EventArgs e)
+        {
+            if (txtKodeProdi.Text != "")
+            {
+                if (txtNamaProdi.Text != "")
+                {
+                    if (txtSingkatan.Text != "")
+                    {
+                        if (txtBikul.Text != "")
+                        {
+                            string myCmd = "INSERT INTO ms_prodi VALUES ('"
+                            + txtKodeProdi.Text + "','"
+                            + txtNamaProdi.Text + "','"
+                            + txtSingkatan.Text + "','"
+                            + txtBikul.Text + "')";
+                            UpdateDB(myCmd);
+                            this.Dispose();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Biaya Kuliah harus diisi !", "Infromasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Singkatan Program Studi harus diisi !", "Infromasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nama Program Studi harus diisi !", "Infromasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kode Program Studi harus diisi !", "Infromasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -63,18 +95,6 @@ namespace UAS_OOP_1204049
 
         }
 
-        private void btnSubmit_Click_1(object sender, EventArgs e)
-        {
-            string myCmd = "INSERT INTO ms_prodi VALUES ('"
-                + txtKodeProdi.Text + "','"
-                + txtNamaProdi.Text + "','"
-                + txtSingkatan.Text + "','"
-                + txtBikul.Text + "')";
-            UpdateDB(myCmd);
-
-            
-        }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             clear();
@@ -85,43 +105,19 @@ namespace UAS_OOP_1204049
             e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
 
-        private void txtKodeProdi_Leave(object sender, EventArgs e)
+        private void txtNamaProdi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (txtKodeProdi.Text == "")
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
-                epWrong.SetError(txtKodeProdi, "Kode Program Studi Tidak Boleh Kosong!");
-
-            }
-            else
-            {
-                epCorrect.SetError(txtKodeProdi, "Betul");
-            }
-            
-        }
-
-        private void txtNamaProdi_Leave(object sender, EventArgs e)
-        {
-            if (txtNamaProdi.Text == "")
-            {
-                epWrong.SetError(txtNamaProdi, "Nama Program Studi Tidak Boleh Kosong!");
-
-            }
-            else
-            {
-                epCorrect.SetError(txtNamaProdi, "Betul");
+                e.Handled = true;
             }
         }
 
-        private void txtSingkatan_Leave(object sender, EventArgs e)
+        private void txtSingkatan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (txtSingkatan.Text == "")
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
-                epWrong.SetError(txtSingkatan, "Singkatan Tidak Boleh Kosong!");
-
-            }
-            else
-            {
-                epCorrect.SetError(txtSingkatan, "Betul");
+                e.Handled = true;
             }
         }
     }

@@ -126,7 +126,7 @@
             this.txtNamaMhs.Name = "txtNamaMhs";
             this.txtNamaMhs.Size = new System.Drawing.Size(208, 20);
             this.txtNamaMhs.TabIndex = 8;
-            this.txtNamaMhs.Leave += new System.EventHandler(this.txtNamaMhs_Leave);
+            this.txtNamaMhs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamaMhs_KeyPress);
             // 
             // cbProdi
             // 
@@ -136,7 +136,7 @@
             this.cbProdi.Size = new System.Drawing.Size(208, 21);
             this.cbProdi.TabIndex = 9;
             this.cbProdi.SelectedIndexChanged += new System.EventHandler(this.cbProdi_SelectedIndexChanged);
-            this.cbProdi.Leave += new System.EventHandler(this.cbProdi_Leave);
+            
             // 
             // btnSubmit
             // 
@@ -186,7 +186,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Mahasiswa";
-            this.Text = "Bonus Level";
+            this.Text = "Mahasiswa";
             ((System.ComponentModel.ISupportInitialize)(this.epCorrect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epWrong)).EndInit();
             this.ResumeLayout(false);

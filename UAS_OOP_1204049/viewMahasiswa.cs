@@ -17,56 +17,29 @@ namespace UAS_OOP_1204049
         {
             InitializeComponent();
         }
+        private SqlConnection conn;
+        private SqlCommand cmd1;
+        private SqlDataAdapter DataAdapter;
+        private DataSet DataSet;
 
-     
-        private DataSet ds_Mhs;
-
-        public DataSet CreateMhsDataSet()
+        private void viewMahasiswa_Load(object sender, EventArgs e)
         {
-            DataSet myDataSet = new DataSet();
-
-            try
-            {
-                
-                SqlConnection myConnection = new SqlConnection(@"Data Source=ZIANASTI\ZIANASTI; Initial Catalog = UAS; Integrated Security = True");
-
-                
-                SqlCommand myCommand = new SqlCommand();
-
-                
-                myCommand.Connection = myConnection;
-
-                
-                myCommand.CommandText = "SELECT * FROM ms_mhs";
-                myCommand.CommandType = CommandType.Text;
-
-                
-                SqlDataAdapter myDataAdapter = new SqlDataAdapter();
-                myDataAdapter.SelectCommand = myCommand;
-                myDataAdapter.TableMappings.Add("Table", "Mahasiswa");
-
-                
-                myDataAdapter.Fill(myDataSet);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-            return myDataSet;
+             
+            string constr = @"Data Source=ZIANASTI\ZIANASTI; Initial Catalog = UAS; Integrated Security = True";
+            conn = new SqlConnection(constr);
+            conn.Open();
+            cmd1 = new SqlCommand();
+            cmd1.Connection = conn;
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = "select * from ms_mhs";
+            DataSet = new DataSet();
+            DataAdapter = new SqlDataAdapter(cmd1);
+            DataAdapter.Fill(DataSet, "ms_mhs");
+            dgMhs.DataSource = DataSet;
+            dgMhs.DataMember = "ms_mhs";
+            dgMhs.Refresh();
+            conn.Close();
         }
-
-        private void RefreshDataSet()
-        {
-           
-            ds_Mhs = CreateMhsDataSet();
-            
-            dgMhs.DataSource = ds_Mhs.Tables["Mahasiswa"];
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            RefreshDataSet();
-        }
+    
     }
 }

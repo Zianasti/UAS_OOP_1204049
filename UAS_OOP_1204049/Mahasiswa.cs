@@ -45,23 +45,13 @@ namespace UAS_OOP_1204049
             try
             {
                 SqlConnection myConnection = new SqlConnection(@"Data Source=ZIANASTI\ZIANASTI; Initial Catalog = UAS; Integrated Security = True");
-
-                
                 myConnection.Open();
-
-               
-                SqlCommand myCommand = new SqlCommand();
-
-                
+                SqlCommand myCommand = new SqlCommand();  
                 myCommand.Connection = myConnection;
-
-                
                 myCommand.CommandText = cmd;
-
-                
                 myCommand.ExecuteNonQuery();
 
-               
+
                 MessageBox.Show("Data Berhasil Disubmit !", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
@@ -77,7 +67,7 @@ namespace UAS_OOP_1204049
            
             txtNpm.Text = "";
             txtNamaMhs.Text = "";
-            cbProdi.Text = "";
+            cbProdi.SelectedIndex = 0;
             
         }
 
@@ -87,7 +77,7 @@ namespace UAS_OOP_1204049
             {
                 if (txtNamaMhs.Text != "")
                 {
-                    if (cbProdi.Text != "--Pilih Program Studi--")
+                    if (cbProdi.Text != "")
                     {
                         string npm = txtNpm.Text;
                         string nama = txtNamaMhs.Text;
@@ -124,15 +114,19 @@ namespace UAS_OOP_1204049
                     }
                     else
                     {
-                        MessageBox.Show("Pilih Program Studi !", "Infromasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Nama harus diisi !", "Infromasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
+                    else
+                    {
+                        MessageBox.Show("Nama harus diisi !", "Infromasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+             }
 
                 else
                 {
-                    MessageBox.Show("Nama harus diisi !", "Infromasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("NPM harus diisi !", "Infromasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }
         }
 
         private void btnClear_Click_1(object sender, EventArgs e)
@@ -145,40 +139,20 @@ namespace UAS_OOP_1204049
             e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
 
-        private void txtNamaMhs_Leave(object sender, EventArgs e)
+        private void txtNamaMhs_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (txtNamaMhs.Text == "")
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
-                epWrong.SetError(txtNamaMhs, "Nama Mahasiswa Tidak Boleh Kosong!");
-            }
-            else if ((txtNamaMhs.Text).Any(Char.IsLetter))
-            {
-
-                epCorrect.SetError(txtNamaMhs, "Betul!");
-            }
-            else
-            {
-                epWrong.SetError(txtNamaMhs, "Inputan hanya boleh huruf !");
-
+                e.Handled = true;
             }
         }
 
-        private void cbProdi_Leave(object sender, EventArgs e)
-        {
-            if (cbProdi.Text == "")
-            {
-                epWrong.SetError(cbProdi, "Prodi Tidak Boleh Kosong!");
-            }
-            else
-            {
-                epCorrect.SetError(cbProdi, "Betul!");
-
-            }
-        }
-
+        
         private void cbProdi_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.prodi = cbProdi.SelectedValue.ToString();
         }
+
+        
     }
 }
